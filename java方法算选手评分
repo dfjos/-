@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class Text {
+    public static void main(String[] args){
+        //创建一个数组，采用动态初始化
+        int[] a = new int[6];
+        Scanner e = new Scanner(System.in);
+        int x = 0;
+        int sum = 0;
+        //采用循环赋值
+        while(x < a.length){
+            System.out.println("请输入"+(x+1)+"选手的分数：");
+                a[x] = e.nextInt();
+                sum += a[x];
+                x++;
+        }
+        int c = (sum - min(a) - max(a)) / (a.length-2);
+        System.out.println("最后评分为："+c);
+    }
+    //定义一个方法求最大值
+    public static int max(int[] a){
+        int max = a[0];
+        for(int x = 0;x < a.length;x++){
+            if(a[x] > max){
+                max = a[x];
+            }
+        }
+        return max;
+    }
+
+    //定义一个方法求最小值
+    public static int min(int[] a){
+        int min = a[0];
+        for(int x = 0;x < a.length;x++){
+            if(a[x] < min){
+                min = a[x];
+            }
+        }
+        return min;
+    }
+}
